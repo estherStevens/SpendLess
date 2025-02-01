@@ -58,7 +58,7 @@ fun RegistrationScreen() {
         Text(
             text = stringResource(R.string.registration_welcome_label),
             style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurface,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Spacer(Modifier.size(36.dp))
         TextField(
