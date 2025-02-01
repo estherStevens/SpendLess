@@ -21,12 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SpendLessTheme {
-                Scaffold(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.primary)) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding),
-                    )
-                }
+                MainNavController()
             }
         }
     }
