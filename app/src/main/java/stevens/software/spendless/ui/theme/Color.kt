@@ -2,7 +2,6 @@ package stevens.software.spendless.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-
 val Primary = Color(0xFF5A00C8)
 val OnPrimary = Color(0xFFFFFFFF)
 val PrimaryContainer = Color(0xFF8138FF)
