@@ -11,6 +11,7 @@ composeBom = "2024.04.01"
 compose_nav = "2.8.6"
 kotlin_serialization = "1.8.0"
 kotlin_serialization_plugin = "2.1.10"
+koin_version = "4.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +30,8 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 compose_navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose_nav" }
 kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin_serialization" }
+koin =  { group = "io.insert-koin", name = "koin-android",  version.ref = "koin_version"}
+koin-compose =  { group = "io.insert-koin", name = "koin-androidx-compose",  version.ref = "koin_version"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

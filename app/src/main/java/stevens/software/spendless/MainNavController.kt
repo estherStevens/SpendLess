@@ -5,7 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.serialization.Serializable
-import stevens.software.spendless.registration.CreatePinScreen
+import stevens.software.spendless.registration.create_pin.CreatePinScreen
 import stevens.software.spendless.registration.RegistrationScreen
 
 @Serializable
