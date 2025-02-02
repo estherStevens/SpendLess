@@ -5,10 +5,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.serialization.Serializable
+import stevens.software.spendless.registration.CreatePinScreen
 import stevens.software.spendless.registration.RegistrationScreen
 
 @Serializable
 object Registration
+
+@Serializable
+object CreatePin
 
 @Composable
 fun MainNavController() {
@@ -19,7 +23,12 @@ fun MainNavController() {
         startDestination = Registration
     ) {
         composable<Registration>{
-            RegistrationScreen()
+            RegistrationScreen(
+                onNextClicked = { navController.navigate(CreatePin) }
+            )
+        }
+        composable<CreatePin>{
+            CreatePinScreen()
         }
     }
 }

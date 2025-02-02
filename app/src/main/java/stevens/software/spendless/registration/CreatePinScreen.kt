@@ -3,21 +3,27 @@ package stevens.software.spendless.registration
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -53,8 +59,9 @@ fun CreatePinScreen() {
         )
         Spacer(Modifier.size(36.dp))
         PasswordDots()
-        Spacer(Modifier.size(32.dp))
+        Spacer(Modifier.size(50.dp))
         Keypad()
+
     }
 }
 
@@ -82,6 +89,7 @@ fun PasswordDot(){
 @Composable
 fun Keypad(){
     Column(
+        modifier = Modifier.fillMaxWidth().fillMaxHeight(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
@@ -106,8 +114,12 @@ fun Keypad(){
             KeypadButton(number = "8")
             KeypadButton(number = "9")
         }
-        Row {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Spacer(modifier = Modifier.weight(1f))
             KeypadButton(number = "0")
+            KeypadClearButton()
         }
     }
 }
@@ -118,7 +130,7 @@ fun KeypadButton(
 ){
     Button(
         onClick = {},
-        modifier = Modifier.size(108.dp, 108.dp),
+        modifier = Modifier.defaultMinSize(108.dp, 108.dp),
         shape = RoundedCornerShape(32.dp),
         colors = ButtonDefaults.buttonColors().copy(
             containerColor = MaterialTheme.extendedColours.primaryFixed
@@ -128,6 +140,24 @@ fun KeypadButton(
             text = number,
             style = MaterialTheme.typography.headlineLarge,
             color = MaterialTheme.extendedColours.onPrimaryFixed
+        )
+    }
+}
+
+@Composable
+fun KeypadClearButton(){
+    Button(
+        onClick = {},
+        modifier = Modifier.defaultMinSize(108.dp, 108.dp),
+        shape = RoundedCornerShape(32.dp),
+        colors = ButtonDefaults.buttonColors().copy(
+            containerColor = MaterialTheme.extendedColours.primaryFixed.copy(alpha = 0.30f)
+        )
+    ) {
+        Icon(
+            painter = painterResource(R.drawable.pin_clear_icon),
+            contentDescription = stringResource(R.string.create_pin_clear),
+            tint = Color.Unspecified
         )
     }
 }

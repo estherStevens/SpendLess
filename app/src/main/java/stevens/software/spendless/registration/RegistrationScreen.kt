@@ -30,7 +30,9 @@ import androidx.compose.ui.unit.dp
 import stevens.software.spendless.R
 
 @Composable
-fun RegistrationScreen() {
+fun RegistrationScreen(
+    onNextClicked: () -> Unit
+) {
     Column(
         modifier = Modifier
             .safeDrawingPadding()
@@ -83,7 +85,8 @@ fun RegistrationScreen() {
         )
         Spacer(Modifier.size(16.dp))
         NextButton(
-            buttonEnabled = false
+            buttonEnabled = true,
+            onNextClicked = onNextClicked
         )
         Spacer(Modifier.size(28.dp))
         TextButton(
@@ -99,14 +102,16 @@ fun RegistrationScreen() {
 }
 
 @Composable
-fun NextButton(buttonEnabled: Boolean){
+fun NextButton(
+    buttonEnabled: Boolean,
+    onNextClicked: () -> Unit){
     val buttonContentColour = if(buttonEnabled) {
         MaterialTheme.colorScheme.onPrimary
     } else {
         MaterialTheme.colorScheme.onSurface.copy(alpha = 0.50f)
     }
     Button(
-        onClick = {},
+        onClick = onNextClicked,
         modifier = Modifier
             .fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
@@ -138,5 +143,7 @@ fun NextButton(buttonEnabled: Boolean){
 @Composable
 @Preview(showSystemUi = true)
 fun RegistrationScreenPreview(){
-    RegistrationScreen()
+    RegistrationScreen(
+        onNextClicked = {}
+    )
 }

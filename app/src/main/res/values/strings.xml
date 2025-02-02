@@ -8,6 +8,7 @@
     <string name="registration_already_have_an_account">Already have an account?</string>
     <string name="create_pin_title">Create PIN</string>
     <string name="create_pin_subtitle">Use PIN to login to your account</string>
+    <string name="create_pin_clear">Clear pin</string>
 
 
 
